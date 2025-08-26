@@ -130,6 +130,6 @@ The user 'labuser1' on the "marcos-threat-h" device initiated and completed the 
 
 ## Response Taken
 
-TOR usage was confirmed on the endpoint `marcos-threat-h` by the user `labuser1`. The device was isolated, and the user's direct manager was notified immediately.
+TOR usage was confirmed on the endpoint `marcos-threat-h` by the user `labuser1`. The device was isolated, and the user's direct manager was notified.
 
 ---
