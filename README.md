@@ -35,6 +35,7 @@ Searched for any file that had the string "tor" in it and discovered what looks 
 
 <img width="1127" height="390" alt="DeviceFileEventsResults" src="https://github.com/user-attachments/assets/0ffdafee-c92d-4fc6-a403-c176cae1b19d" />
 
+---
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
@@ -45,7 +46,6 @@ Searched for any `ProcessCommandLine` that contained the string "tor-browser-win
 <img width="837" height="85" alt="DeviceProcessEvents_Table" src="https://github.com/user-attachments/assets/ffe245fa-41b7-4fb4-85be-8c22a6775a5a" />
 
 <img width="1189" height="213" alt="DeviceProcessEvents_Table_Results" src="https://github.com/user-attachments/assets/a205ee67-8626-4856-9edc-ae12019abcc2" />
-
 
 ---
 
@@ -59,7 +59,6 @@ Searched for any indication that user "labuser1" actually opened the TOR browser
 
 <img width="1165" height="324" alt="DeviceProcessEvents_TOR_Execution_Results" src="https://github.com/user-attachments/assets/c167679a-4458-44dd-8fff-bd2b2abba695" />
 
-
 ---
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
@@ -71,7 +70,6 @@ Searched for any indication the TOR browser was used to establish a connection u
 <img width="1060" height="152" alt="DeviceNetworkEvents" src="https://github.com/user-attachments/assets/ea44c2ca-2030-4526-9707-4bc6f1fb8e63" />
 
 <img width="1214" height="294" alt="DeviceNetworkEvents_Results" src="https://github.com/user-attachments/assets/ab3483e1-400f-4af8-940b-908a6e69bc44" />
-
 
 ---
 
