@@ -63,7 +63,7 @@ Searched for any indication that user "labuser1" actually opened the TOR browser
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
 
-Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. At `2025-08-25T17:18:57.3769454Z`, an employee on the "marcos-threat-h" device successfully established a connection to the remote IP address `80.239.189.76` on port `9001`. The connection was initiated by the process `tor.exe`, located in the folder `c:\users\labuser1\desktop\tor browser\browser\torbrowser\tor\tor.exe`. There were a couple of other connections to sites over port `443` & '9001'.
+Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. At `2025-08-25T17:18:57.3769454Z`, an employee on the "marcos-threat-h" device successfully established a connection to the remote IP address `80.239.189.76` on port `9001`. The connection was initiated by the process `tor.exe`, located in the folder `c:\users\labuser1\desktop\tor browser\browser\torbrowser\tor\tor.exe`. There were a couple of other connections to sites over port '443' & '9001'.
 
 **Query used to locate events:**
 
