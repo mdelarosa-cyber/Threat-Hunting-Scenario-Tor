@@ -38,7 +38,7 @@ Searched for any file that had the string "tor" in it and discovered what looks 
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-14.0.1.exe". Based on the logs returned, at `2025-08-26T15:17:34.508852Z`, an employee on the "marcos-threat-h" device ran the file `tor-browser-windows-x86_64-portable-14.5.6.exe` from their Downloads folder, using a command that triggered a silent installation.
+Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-14.5.6.exe". Based on the logs returned, at `2025-08-26T15:17:34.508852Z`, an employee on the "marcos-threat-h" device ran the file `tor-browser-windows-x86_64-portable-14.5.6.exe` from their Downloads folder, using a command that triggered a silent installation.
 
 **Query used to locate event:**
 
@@ -51,37 +51,27 @@ Searched for any `ProcessCommandLine` that contained the string "tor-browser-win
 
 ### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
 
-Searched for any indication that user "employee" actually opened the TOR browser. There was evidence that they did open it at `2024-11-08T22:17:21.6357935Z`. There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards.
+Searched for any indication that user "labuser1" actually opened the TOR browser. There was evidence that they did open it at `2025-08-25T17:18:39.2304004Z`. There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards.
 
 **Query used to locate events:**
 
-```kql
-DeviceProcessEvents  
-| where DeviceName == "threat-hunt-lab"  
-| where FileName has_any ("tor.exe", "firefox.exe", "tor-browser.exe")  
-| project Timestamp, DeviceName, AccountName, ActionType, FileName, FolderPath, SHA256, ProcessCommandLine  
-| order by Timestamp desc
-```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/b13707ae-8c2d-4081-a381-2b521d3a0d8f">
+<img width="837" height="114" alt="DeviceProcessEvents_TOR_Execution" src="https://github.com/user-attachments/assets/8332f2ff-d033-4afa-9a05-950bd3032762" />
+
+<img width="1165" height="324" alt="DeviceProcessEvents_TOR_Execution_Results" src="https://github.com/user-attachments/assets/c167679a-4458-44dd-8fff-bd2b2abba695" />
+
 
 ---
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
 
-Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. At `2024-11-08T22:18:01.1246358Z`, an employee on the "threat-hunt-lab" device successfully established a connection to the remote IP address `176.198.159.33` on port `9001`. The connection was initiated by the process `tor.exe`, located in the folder `c:\users\employee\desktop\tor browser\browser\torbrowser\tor\tor.exe`. There were a couple of other connections to sites over port `443`.
+Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. At `2025-08-25T17:18:57.3769454Z`, an employee on the "marcos-threat-h" device successfully established a connection to the remote IP address `80.239.189.76` on port `9001`. The connection was initiated by the process `tor.exe`, located in the folder `c:\users\labuser1\desktop\tor browser\browser\torbrowser\tor\tor.exe`. There were a couple of other connections to sites over port `443` & '9001'.
 
 **Query used to locate events:**
 
-```kql
-DeviceNetworkEvents  
-| where DeviceName == "threat-hunt-lab"  
-| where InitiatingProcessAccountName != "system"  
-| where InitiatingProcessFileName in ("tor.exe", "firefox.exe")  
-| where RemotePort in ("9001", "9030", "9040", "9050", "9051", "9150", "80", "443")  
-| project Timestamp, DeviceName, InitiatingProcessAccountName, ActionType, RemoteIP, RemotePort, RemoteUrl, InitiatingProcessFileName, InitiatingProcessFolderPath  
-| order by Timestamp desc
-```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/87a02b5b-7d12-4f53-9255-f5e750d0e3cb">
+<img width="1060" height="152" alt="DeviceNetworkEvents" src="https://github.com/user-attachments/assets/ea44c2ca-2030-4526-9707-4bc6f1fb8e63" />
+
+<img width="1214" height="294" alt="DeviceNetworkEvents_Results" src="https://github.com/user-attachments/assets/ab3483e1-400f-4af8-940b-908a6e69bc44" />
+
 
 ---
 
