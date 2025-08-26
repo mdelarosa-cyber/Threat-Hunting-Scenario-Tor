@@ -13,7 +13,7 @@
 
 ##  Scenario
 
-Management suspects some employees may be using the Tor Browser to bypass network security controls. Recent logs show atypical encrypted traffic and connections to known Tor entry (guard) nodes, and there are anonymous reports of attempts to access restricted sites during work hours. Objective: detect and analyze any Tor usage, assess related security incidents, and recommend mitigations. Action: if Tor usage is confirmed, notify management immediately.
+Management suspects some employees may be using the Tor Browser to bypass network security controls. Recent logs show atypical encrypted traffic and connections to known Tor entry (guard) nodes, and there are anonymous reports of attempts to access restricted sites during work hours. Objective: detect and analyze any Tor usage, assess related security incidents, and recommend mitigations. Action: if Tor usage is confirmed, isolate device and notify management immediately.
 
 ### High-Level TOR-Related IoC Discovery Plan
 
