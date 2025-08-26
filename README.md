@@ -27,7 +27,7 @@ Management suspects some employees may be using the Tor Browser to bypass networ
 
 ### 1. Searched the `DeviceFileEvents` Table
 
-Searched for any file that had the string "tor" in it and discovered what looks like the user "employee" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` on the desktop at `2025-08-25T17:28:14.7213374Z`. These events began at `2025-08-25T17:11:19.8370144Z`.
+Searched for any file that had the string "tor" in it and discovered what looks like the user "labuser1" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` on the desktop at `2025-08-25T17:28:14.7213374Z`. These events began at `2025-08-25T17:11:19.8370144Z`.
 
 **Query used to locate events:**
 
@@ -38,18 +38,14 @@ Searched for any file that had the string "tor" in it and discovered what looks 
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-14.0.1.exe". Based on the logs returned, at `2024-11-08T22:16:47.4484567Z`, an employee on the "threat-hunt-lab" device ran the file `tor-browser-windows-x86_64-portable-14.0.1.exe` from their Downloads folder, using a command that triggered a silent installation.
+Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-14.0.1.exe". Based on the logs returned, at `2025-08-26T15:17:34.508852Z`, an employee on the "marcos-threat-h" device ran the file `tor-browser-windows-x86_64-portable-14.5.6.exe` from their Downloads folder, using a command that triggered a silent installation.
 
 **Query used to locate event:**
 
-```kql
+<img width="837" height="85" alt="DeviceProcessEvents_Table" src="https://github.com/user-attachments/assets/ffe245fa-41b7-4fb4-85be-8c22a6775a5a" />
 
-DeviceProcessEvents  
-| where DeviceName == "threat-hunt-lab"  
-| where ProcessCommandLine contains "tor-browser-windows-x86_64-portable-14.0.1.exe"  
-| project Timestamp, DeviceName, AccountName, ActionType, FileName, FolderPath, SHA256, ProcessCommandLine
-```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/b07ac4b4-9cb3-4834-8fac-9f5f29709d78">
+<img width="1189" height="213" alt="DeviceProcessEvents_Table_Results" src="https://github.com/user-attachments/assets/a205ee67-8626-4856-9edc-ae12019abcc2" />
+
 
 ---
 
