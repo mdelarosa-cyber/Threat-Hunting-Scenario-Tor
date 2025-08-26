@@ -33,6 +33,9 @@ Searched for any file that had the string "tor" in it and discovered what looks 
 
 <img width="894" height="146" alt="DeviceFileEvents" src="https://github.com/user-attachments/assets/f110f044-78db-486c-a8d9-e7c64eadc15c" />
 
+<img width="1127" height="390" alt="DeviceFileEventsResults" src="https://github.com/user-attachments/assets/0ffdafee-c92d-4fc6-a403-c176cae1b19d" />
+
+
 ### 2. Searched the `DeviceProcessEvents` Table
 
 Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-14.0.1.exe". Based on the logs returned, at `2024-11-08T22:16:47.4484567Z`, an employee on the "threat-hunt-lab" device ran the file `tor-browser-windows-x86_64-portable-14.0.1.exe` from their Downloads folder, using a command that triggered a silent installation.
